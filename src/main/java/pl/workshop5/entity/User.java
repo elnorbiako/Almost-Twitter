@@ -35,6 +35,12 @@ public class User {
             new ArrayList<>();
 
 
+    @OneToMany(mappedBy = "user",
+            cascade = CascadeType.ALL)
+    private List<Comment> comments =
+            new ArrayList<>();
+
+
     public User(String username, String password, boolean enabled, String email) {
         this.username = username;
         this.password = password;
@@ -84,6 +90,22 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Tweet> getTwets() {
+        return twets;
+    }
+
+    public void setTwets(List<Tweet> twets) {
+        this.twets = twets;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }
 

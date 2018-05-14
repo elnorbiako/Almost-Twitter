@@ -23,6 +23,8 @@
 <%--<a href="/user/clear">Delete All Users along with Tweets  --- ACHTUNG ----</a><br>--%>
 <div align="right">
 <a href="/logout"><strong>Logout</strong></a><br>
+<a href="/editUser"><strong>Edit account</strong></a><br>
+<a href="/userPage"><strong>Your page</strong></a><br>
 </div>
 
 Add new tweet:
@@ -50,7 +52,7 @@ Add new tweet:
 
         <li>
             <span><strong>${tweet.title}</strong> <br>
-                    ${tweet.tweetText}     <i>${tweet.created}</i></span>
+                    ${tweet.tweetText}     <i>${tweet.created}</i>  <a href="/tweet/${tweet.id}">Details</a>  </span>
                 <%--<a href="book/delete/${book.id}"> Delete</a>--%>
                 <%--<a href="book/edit/${book.id}"> Edit</a>--%>
                 <%----%>

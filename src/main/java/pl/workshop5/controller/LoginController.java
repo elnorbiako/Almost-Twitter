@@ -29,15 +29,15 @@ public class LoginController {
 
 
     @PostMapping("/login")
-    public String login(@ModelAttribute User user, HttpSession session) {
+    public String login(@ModelAttribute User user,Model model, HttpSession session) {
 
         List<User> users = userRepository.findAll();
 
         for (User userDb : users) {
             if (userDb.getEmail().matches(user.getEmail())) {
-
-                System.out.println(userDb.getPassword());
-                System.out.println(user.getPassword());
+//
+//                System.out.println(userDb.getPassword());
+//                System.out.println(user.getPassword());
 
                 if (userDb.getPassword().matches(user.getPassword())) {
                     Long loggedUserId = userDb.getId();
@@ -46,6 +46,7 @@ public class LoginController {
                 }
             }
         }
+        model.addAttribute("err", "Incorrect email or password");
         return "Login";
     }
 }

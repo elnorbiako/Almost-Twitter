@@ -16,6 +16,7 @@
     <form:errors path="*"/>
 
     <h2>Add new user:</h2>
+    <h2 style="color: crimson"><strong>${err}</strong></h2>
 
     Username: <form:input path="username" placeholder="Username"/>
     <form:errors path="username"/>

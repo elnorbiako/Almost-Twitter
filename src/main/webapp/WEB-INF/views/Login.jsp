@@ -15,6 +15,7 @@
 <body>
 
 <h2>Please login with Your email and password</h2>
+<h2 style="color: crimson"><strong>${err}</strong></h2>
 
 <form:form method="post" modelAttribute="user">
     <form:errors path="*"/>
